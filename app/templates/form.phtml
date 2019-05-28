@@ -1,0 +1,33 @@
+<form method="GET" action="./">
+  <div class="d-flex justify-content-center">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 d-flex align-items-middle">
+        <label style="line-height: 30px;" class="my-1 mr-2" for="startDate">Start:</label>
+        <input class="datepicker form-control" id="endDate" name="startDate" data-date-format="mm/dd/yyyy" value="<?= $v($startDate) ?>" autocomplete="off">
+      </div>
+      <div class="col-md-3 col-lg-3 d-flex align-items-middle">
+        <label style="line-height: 30px;" class="my-1 mr-3" for="endDate">End:</label>
+        <input class="datepicker form-control" id="endDate" name="endDate" data-date-format="mm/dd/yyyy" value="<?= $v($endDate) ?>" autocomplete="off">
+      </div>
+      <div class="col-md-3 col-lg-4 d-flex align-items-middle">
+        <label style="line-height: 30px;" class="my-1 mr-2" for="users">User:</label>
+        <select class="custom-select" id="users" name="user">
+          <option value="" <?php if (empty($_REQUEST['user'])) { ?> selected<?php } ?>>All Users</option>
+          <option value="full" <?php if ($_REQUEST['user'] == "full") { ?> selected<?php } ?>>Team Users</option>
+          <option value="guest" <?php if ($_REQUEST['user'] == "guest") { ?> selected<?php } ?>>Guest Users</option>
+          <option value="">------------------</option>
+          <?php
+          foreach ($users as $id => $name) {
+            ?>
+            <option value="<?= $id ?>" <?php if (!empty($_REQUEST['user']) && $_REQUEST['user'] == $id) { ?> selected<?php } ?>><?= $name ?></option>
+          <?php
+        }
+        ?>
+        </select>
+      </div>
+      <div class="col-md-3 col-lg-2 d-flex align-items-middle">
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

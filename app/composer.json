@@ -1,0 +1,20 @@
+{
+    "name": "arlo/slack-stats",
+    "type": "project",
+    "url": "https://github.com/arlogilbert/slack-stats",
+    "authors": [
+        {
+            "name": "Arlo Gilbert",
+            "email": "arlogilbert@me.com"
+        }
+    ],
+    "require": {
+        "php-http/curl-client": "^1.7",
+        "guzzlehttp/psr7": "^1.5",
+        "jolicode/slack-php-api": "^1.2",
+        "theiconic/php-ga-measurement-protocol": "^2.0",
+        "catfan/medoo": "^1.6",
+        "league/plates": "v4.0.0-alpha",
+        "vlucas/phpdotenv": "^3.3"
+    }
+}

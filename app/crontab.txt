@@ -1,0 +1,2 @@
+#SAMPLE CRON ENTRY
+*/5 * * * * /PATH_TO/php /PATH_TO/app/cron.php

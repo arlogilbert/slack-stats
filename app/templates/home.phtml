@@ -1,0 +1,39 @@
+<?php $v->layout('template', ['title' => 'Slack Stats - Home']) ?>
+<?php include('form.phtml'); ?>
+<table class="table table-striped" style="margin-top: 30px;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="th-sm text-center d-none d-lg-table-cell">Rank</th>
+      <th scope="col" class="th-sm">Name</th>
+      <th scope="col" class="th-sm text-center">Status</th>
+      <th scope="col" class="th-sm d-none d-md-table-cell d-sm-none d-md-block">Slack ID</th>
+      <th scope="col" class="th-lg text-center">Online<span class="d-none d-lg-inline"> Percentage</span></th>
+      <th scope="col" class="th-sm text-center">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $i = 1;
+    foreach ($data as $u => $uv) { ?>
+      <tr>
+        <th scope="row" class="align-middle text-center d-none d-lg-table-cell">#<?= $i ?></th>
+        <td class="align-middle"><?= $v($uv['realName']) ?></td>
+        <td class="align-middle text-center">
+          <div class="btn btn-circle btn-status-<?= $v($uv['status']) ?>" title="<?= ucwords($v($uv['status'])) ?>"></div>
+        </td>
+        <td class="align-middle d-none d-md-table-cell"><a href="slack://user?team=<?=getenv('SlackTeam')?>&id=<?= $v($u) ?>"><?= $v($u) ?></a></td>
+        <td class="align-middle text-center">
+          <div class="progress d-none d-md-block" style="height: 30px;">
+            <div class="progress-bar" style="<?php if ($uv['activePercent'] == 0) { ?>color: #000; <?php } ?>width:<?= $v($uv['activePercent']) ?>%; height:100%;" aria-valuenow="<?= $v($uv['activePercent']) ?>" aria-valuemin="0" aria-valuemax="100"><span style="padding-left: 2px;"><?= $v($uv['activePercent']) ?>%</span></div>
+          </div>
+          <div class="d-xs-block d-sm-block d-md-none">
+            <?= $v($uv['activePercent']) ?>%
+          </div>
+        </td>
+        <td class="align-middle text-center">
+          <a href="./?startDate=<?= $v($startDate) ?>&endDate=<?= $v($endDate) ?>&user=<?= $v($u) ?>" style="text-decoration: none;">🔍</a>
+        </td>
+      </tr>
+      <?php $i++;
+    } ?>
+  </tbody>
+</table>
