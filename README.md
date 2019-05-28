@@ -27,8 +27,20 @@ This has been tested with Apache 2.4 with php-fpm running PHP 7.X latest stable.
 6. Create a crontab entry to run every 5 minutes such as `*/5 * * * * /PATH_TO/php /PATH_TO/app/cron.php`
 7. Everything should be working!
 
+## Screenshots
+
+Curious what it looks like live? Here is my instance with names changed to protect the innocent.
+
+### Overview Stats
+![Screenshot 1][s1i]
+
+### Detail Stats
+![Screenshot 1][s2i]
+
 [li]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [ll]: app/LICENSE
 [ti]: https://img.shields.io/twitter/url/https/arlogilbert.svg?style=social
 [tl]: https://twitter.com/arlogilbert
 [cl]: https://getcomposer.org/download/
+[s1i]: assets/images/screenshot-1.png
+[s2i]: assets/images/screenshot-2.png
