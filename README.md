@@ -18,9 +18,14 @@ This has been tested with Apache 2.4 with php-fpm running PHP 7.X latest stable.
 1. Import the `app/db/create.sql` into a database of your choosing and set up credentials
 2. Install [composer][cl] if you don't already have it
 3. `cd` into the `app` directory and run `composer install`
-4. Create a `.env` file in the `app` directory (see app/sampleEnv for the required variables)
-5. Create a crontab entry to run every 5 minutes such as `*/5 * * * * /PATH_TO/php /PATH_TO/app/cron.php`
-6. Everything should be working!
+4. Create an app in Slack, assign the following user permissons:
+* users:read
+* users:read.email
+* users.profile:read
+* team:read 
+5. Create a `.env` file in the `app` directory (see app/sampleEnv for the required variables) and replace the variables with yours
+6. Create a crontab entry to run every 5 minutes such as `*/5 * * * * /PATH_TO/php /PATH_TO/app/cron.php`
+7. Everything should be working!
 
 [li]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [ll]: app/LICENSE
