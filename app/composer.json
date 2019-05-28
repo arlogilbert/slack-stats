@@ -2,12 +2,10 @@
     "name": "arlo/slack-stats",
     "type": "project",
     "url": "https://github.com/arlogilbert/slack-stats",
-    "authors": [
-        {
-            "name": "Arlo Gilbert",
-            "email": "arlogilbert@me.com"
-        }
-    ],
+    "authors": [{
+        "name": "Arlo Gilbert",
+        "email": "arlogilbert@me.com"
+    }],
     "require": {
         "php-http/curl-client": "^1.7",
         "guzzlehttp/psr7": "^1.5",

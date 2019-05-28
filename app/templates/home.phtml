@@ -20,7 +20,7 @@
         <td class="align-middle text-center">
           <div class="btn btn-circle btn-status-<?= $v($uv['status']) ?>" title="<?= ucwords($v($uv['status'])) ?>"></div>
         </td>
-        <td class="align-middle d-none d-md-table-cell"><a href="slack://user?team=<?=getenv('SlackTeam')?>&id=<?= $v($u) ?>"><?= $v($u) ?></a></td>
+        <td class="align-middle d-none d-md-table-cell"><a href="slack://user?team=<?= getenv('SlackTeam') ?>&id=<?= $v($u) ?>"><?= $v($u) ?></a></td>
         <td class="align-middle text-center">
           <div class="progress d-none d-md-block" style="height: 30px;">
             <div class="progress-bar" style="<?php if ($uv['activePercent'] == 0) { ?>color: #000; <?php } ?>width:<?= $v($uv['activePercent']) ?>%; height:100%;" aria-valuenow="<?= $v($uv['activePercent']) ?>" aria-valuemin="0" aria-valuemax="100"><span style="padding-left: 2px;"><?= $v($uv['activePercent']) ?>%</span></div>

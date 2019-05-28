@@ -30,18 +30,18 @@
                         $i = 0;
                         $len = count($data);
                         foreach ($data as $d) { ?><?php if ($d['presence'] == 'active') { ?>1<?php } else { ?> .2 <?php }
-                                                                                        if ($i < $len - 1) { ?>, <?php } ?><?php
-                                                                                                                                        $i++;
-                                                                                                                                    }
-                                                                                                                                    ?>],
+                                                                                                                    if ($i < $len - 1) { ?>, <?php } ?><?php
+                                                                                                                                $i++;
+                                                                                                                            }
+                                                                                                                            ?>],
                 backgroundColor: [<?php
                                     $i = 0;
                                     $len = count($data);
                                     foreach ($data as $d) { ?><?php if ($d['presence'] == 'active') { ?>chartColors.color1<?php } else { ?>chartColors.color2<?php }
-                                                                                                                        if ($i < $len - 1) { ?>, <?php } ?><?php
-                                                                                                                                                                    $i++;
-                                                                                                                                                                }
-                                                                                                                                                                ?>],
+                                                                                                                                                                if ($i < $len - 1) { ?>, <?php } ?><?php
+                                                                                                                                                                $i++;
+                                                                                                                                                            }
+                                                                                                                                                            ?>],
                 borderColor: '#eee'
             }]
         }
@@ -80,8 +80,8 @@
                             },
                             //dynamically adjust according to the number of days in the chart to avoid crowding
                             stepSize: <?php if ($days >= 4) { ?>12<?php } else {
-                                                                echo 3;
-                                                            } ?>
+                                                                    echo 3;
+                                                                } ?>
                         },
                         overrideRotation: 45,
                         display: true,
